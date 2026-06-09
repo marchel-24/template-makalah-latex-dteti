@@ -45,20 +45,28 @@ component, formatting, style, styling, insert
 \end{IEEEkeywords}
 
 \section{Introduction}
-This document is a model and instructions for \LaTeX.
-Please observe the conference page limits. 
 
-\section{Ease of Use}
+The continuous growth of Indonesia's population has driven a steady increase in household electricity demand. According to Statistics Indonesia (BPS), the national population growth rate has consistently ranged between 1\% and 1.5\% per year \cite{bpspertumbuhanpenduduk}, while data from the National Socioeconomic Survey (SUSENAS) confirm a corresponding rise in household electronic appliance ownership \cite{bpssusenas}. As households increasingly rely on devices such as air conditioners, televisions, and refrigerators, total residential electricity consumption continues to grow. Nevertheless, public understanding of efficient energy consumption patterns remains limited \cite{konsumsiEnergi2024}.
 
-\subsection{Maintaining the Integrity of the Specifications}
+A key barrier to energy-efficient behavior is the lack of accessible, actionable feedback on household energy use. Most users only receive aggregated information through monthly electricity bills, without understanding which appliances contribute most to their total consumption or how house design affects energy usage. Studies show that static, non-personalized energy feedback is insufficient to stimulate meaningful behavioral change \cite{agarwal_review_residential_energy}. Interactive and visual approaches have been shown to be more effective in raising energy literacy among building occupants \cite{henni2022evaluation}, and gamification or simulation-based methods have demonstrated potential in motivating energy behavior change \cite{li2024gamification}.
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Virtual Reality (VR) has emerged as a powerful medium for interactive visualization, particularly in the architecture, engineering, and construction sectors \cite{ImnersiveVR2022}. Prior work has demonstrated that VR enables users to explore and customize house designs in an immersive environment \cite{skripsikating}. However, existing VR applications for residential design have focused primarily on spatial visualization and aesthetic customization, without addressing electricity consumption simulation or energy estimation features. The integration of energy awareness into VR-based house design tools remains largely unexplored.
+
+This paper presents \textit{ModXplore}, an interactive VR-based simulation system developed for Meta Quest 3 using the Unity Engine. ModXplore allows users to explore and customize a virtual house while simultaneously simulating and estimating household electricity consumption using the Bottom-Up Appliance Modeling approach. The system further integrates a Large Language Model (LLM)---specifically LLaMA 3.1 via the Groq API---to automatically generate personalized appliance usage schedules. The system was evaluated through black-box functional testing and a user study with 24 respondents using the System Usability Scale (SUS), User Experience Questionnaire (UEQ), and a Likert-scale questionnaire on energy understanding and decision-making support.
+
+The main contributions of this work are: (1) an interactive VR simulation system integrating house design exploration with real-time electricity consumption estimation; (2) an energy estimation module based on Bottom-Up Appliance Modeling that accurately distinguishes usage scenarios; and (3) an AI-powered schedule personalization feature using an LLM to assist users in making energy-efficient decisions.
+
+\section{Related Work}
+
+\subsection{VR for Building Visualization and Design}
+
+VR has been widely adopted in architecture and residential design to overcome the limitations of conventional 2D visualization. Lang and Zhuang demonstrated that combining VR with clustering algorithms for interior design improved modeling accuracy by over 20\% compared to traditional SVM-based methods and enabled real-time evaluation of design changes \cite{InteractiveDesignVR}. Safikhani et al. confirmed that immersive VR environments significantly enhance users' spatial understanding by allowing first-person exploration of buildings, which is difficult to achieve with static renders \cite{ImnersiveVR2022}. Wang et al. further showed that scene-context-aware object interaction in VR reduces selection time and raises user satisfaction during interior configuration tasks \cite{SceneContextVR}. The integration of VR with Building Information Modeling (BIM) has also been shown to improve simulation realism and design communication between users and architects \cite{eudl2023vr, mdpi2025vr}. In the Indonesian context, Suryanto developed a VR application for house design exploration and material customization on Meta Quest 3 using Unity, achieving a SUS score of 70.63; however, the system did not include any electricity consumption simulation or energy estimation feature \cite{skripsikating}.
+
+\subsection{VR and AR for Energy Simulation and Awareness}
+
+Beyond architectural visualization, VR and AR are increasingly applied to improve energy literacy and support energy-efficient behavior. Latini et al. developed an immersive VR training environment that integrates a residential Building Energy Model with real-time eco-feedback indicators; over 90\% of participants showed improved knowledge of energy-related behavior after the session \cite{EnergyAwarenessVR2025}. Maqbool et al. evaluated audio, visual, and social cues in VR for promoting energy conservation, finding that visual interventions produced statistically significant improvements in pro-environmental behavior scores \cite{maqbool2025vr}. Anifowose et al. introduced ENERGYSIM, a multi-user immersive VR prototype for building energy education that allows users to explore the impact of building materials on energy consumption through interactive menu-driven walkthroughs \cite{EnergySIM2023}. In the AR domain, An et al. showed that overlaying real-time energy consumption data onto physical appliances via AR reduced energy use without degrading occupant comfort \cite{AREnergy2023}. Frigura-Iliasa et al. proposed an interactive 3D simulator (ElectroHouse) connecting consumption graphs with appliance-level controls to improve household energy literacy \cite{electrohouse2023}.
+
+Despite this progress, existing studies either focus on building-level energy modeling without appliance-level interactivity, or on energy awareness without integrating house design exploration. None of the reviewed systems combine immersive VR house customization, bottom-up appliance-level energy estimation, and AI-driven schedule personalization within a single platform, which is the gap this work addresses.
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
