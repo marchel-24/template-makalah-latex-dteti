@@ -112,16 +112,17 @@ F.~M. Frigura-Iliasa, D.~S. Grigorie, K.~Sornek, M.~Homa, and
   M.~Frigura-Iliasa, ``Educational simulator for sustainable energy management
   for a typical household,'' \emph{Sustainability}, vol.~18, no.~5, 2026.
 
-\bibitem{2023Bhawal-SST}
-S.~Bhawal, H.~Patel, K.~Hatua, K.~Vasudevan, and S.~Bhattacharya, ``Solid state
-  transformer based on naturally cell balanced series resonant converter with
-  cascaded h-bridge cells switched at grid frequency,'' \emph{IEEE Transactions
-  on Power Electronics}, pp. 1--14, 2023.
+\bibitem{brooke1996sus}
+J.~Brooke, ``Sus: A quick and dirty usability scale,'' in \emph{Usability
+  Evaluation in Industry}, P.~W. Jordan, B.~Thomas, B.~A. Weerdmeester, and
+  I.~L. McClelland, Eds.\hskip 1em plus 0.5em minus 0.4em\relax London: Taylor
+  \& Francis, 1996, pp. 189--194.
 
-\bibitem{2023Chen-Phase-Shift-DAB}
-R.~Chen, C.~Li, C.~Li, H.~Fang, R.~Lu, W.~Yao, W.~Li, and X.~He, ``Phase-shift
-  angle segmentation modulation for soft-switching medium voltage dab converter
-  with series-connected sic mosfets,'' \emph{IEEE Transactions on
-  Transportation Electrification}, pp. 1--1, 2023.
+\bibitem{schrepp2023handbook}
+\BIBentryALTinterwordspacing
+M.~Schrepp, \emph{User Experience Questionnaire Handbook}, 2023, version 11, 12
+  September 2023. [Online]. Available:
+  \url{https://www.ueq-online.org/Material/Handbook.pdf}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}
