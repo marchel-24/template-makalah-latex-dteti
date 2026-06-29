@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1781083262.56824 "main.aux" "main.bbl" "main" 1781083270.20198 0
-  "./references.bib" 1781063705 8004 d0f82eb30c324693ba4dbb6e40d6c738 ""
+["bibtex main"] 1782684457.74116 "main.aux" "main.bbl" "main" 1782691204.82544 0
+  "./references.bib" 1782646914 9551 550dadcf039b2c4c908d77be32f105fc ""
   "C:/Users/MARCHEL RIANRA/AppData/Local/Programs/MiKTeX/bibtex/bst/ieeetran/IEEEtran.bst" 1440622569 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "main.aux" 1781083269 5344 6b28ac4bb97da258d4f1c48eed2bc641 "pdflatex"
+  "main.aux" 1782691203 5970 34ea3a79d2f54e8127453e9440815dc1 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1781083267.82204 "e:/Skripsi/makalahhhh/template-makalah-latex-dteti/main.tex" "main.pdf" "main" 1781083270.20281 0
+["pdflatex"] 1782691202.10867 "e:/Skripsi/makalahhhh/template-makalah-latex-dteti/main.tex" "main.pdf" "main" 1782691204.8263 0
   "C:/Users/MARCHEL" 1728872056 19018 bccc7672776f184e059c23eface82b0f ""
   "C:/Users/MARCHEL RIANRA/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1778530053 82507 a9eef8696c92627b87e9975edea03b2a ""
   "C:/Users/MARCHEL RIANRA/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1776705677 24229330 41f6c7225eb25f42f67a956e89a0aebf ""
@@ -86,12 +86,13 @@
   "C:/Users/MARCHEL RIANRA/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "IEEEtran.cls" 1780979637 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
   "ai-schedule.png" 1779527711 683105 c033286a59a7171cf790b6c3bf1b29e0 ""
+  "alur-aplikasi.png" 1781236773 173709 7b7ab1273ac53936dbbe93001abd1bd1 ""
   "arsitektur-sistem.png" 1780299637 215677 9abad8c4ec67c5bc6d90961c01b63657 ""
-  "e:/Skripsi/makalahhhh/template-makalah-latex-dteti/main.tex" 1781083267 31299 3a1985c73e2f4a7fa46866f084cbcc3a ""
+  "e:/Skripsi/makalahhhh/template-makalah-latex-dteti/main.tex" 1782691201 31855 0a35db5e341ba01719f53eacf50a9d9c ""
   "grafik-energi.png" 1780123572 684764 013e6b085976ef433d4b3b70317aed96 ""
-  "main.aux" 1781083269 5344 6b28ac4bb97da258d4f1c48eed2bc641 "pdflatex"
-  "main.bbl" 1781083262 5882 7b2ea665d15ebf62a5d698286fe25531 "bibtex main"
-  "main.tex" 1781083267 31299 3a1985c73e2f4a7fa46866f084cbcc3a ""
+  "main.aux" 1782691203 5970 34ea3a79d2f54e8127453e9440815dc1 "pdflatex"
+  "main.bbl" 1782684458 7093 c674c93a4cbd75f80d01a0433910b83a "bibtex main"
+  "main.tex" 1782691201 31855 0a35db5e341ba01719f53eacf50a9d9c ""
   "simulasi-energi.png" 1779526920 610176 9cbc3bf243cf2d98b782f29508364d1b ""
   "ueq-benchmark.png" 1780565402 39650 a071cd00525411801ba1396d87eb39e2 ""
   (generated)

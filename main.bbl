@@ -26,9 +26,33 @@
   persentase penduduk, kepadatan penduduk, rasio jenis kelamin penduduk menurut
   provinsi, 2026,'' 2026, accessed: Apr. 2026.
 
+\bibitem{skripsikating}
+J.~E. A.~R. Suryanto, ``Pengembangan aplikasi virtual reality untuk visualisasi
+  dan kustomisasi desain bangunan rumah,'' Master's thesis, Universitas Gadjah
+  Mada, 2025.
+
+\bibitem{hermadiana2025integrasi}
+R.~Hermadiana, I.~M. Astra, and F.~C. Wibowo, ``Integrasi simulasi digital
+  dalam pembelajaran energi baru terbarukan untuk meningkatkan kemampuan
+  berpikir kritis murid smk,'' \emph{Jurnal Terapan Pendidikan Dasar dan
+  Menengah}, vol.~5, no.~4, pp. 301--305, 2025.
+
+\bibitem{salsabila2026pengaruh}
+F.~Salsabila, I.~Safiah, and S.~Fitriani, ``Pengaruh media pembelajaran phet
+  simulation terhadap hasil belajar siswa pada materi perubahan energi di kelas
+  v sdn 1 beureunuen,'' \emph{Pendas: Jurnal Ilmiah Pendidikan Dasar}, vol.~11,
+  no.~1, pp. 158--167, 2026.
+
 \bibitem{bpssusenas}
-------, ``Mengenal survei sosial ekonomi nasional (susenas),'' 2026, accessed:
-  Apr. 2026.
+{Badan Pusat Statistik}, ``Mengenal survei sosial ekonomi nasional (susenas),''
+  2026, accessed: Apr. 2026.
+
+\bibitem{databoks2023internet}
+\BIBentryALTinterwordspacing
+{Databoks}, ``Pengguna internet di indonesia tembus 213 juta orang hingga awal
+  2023,'' 2023, diakses pada 21 April 2026. [Online]. Available:
+  \url{https://databoks.katadata.co.id/teknologi-telekomunikasi/statistik/d109a45f4409c34/pengguna-internet-di-indonesia-tembus-213-juta-orang-hingga-awal-2023}
+\BIBentrySTDinterwordspacing
 
 \bibitem{konsumsiEnergi2024}
 A.~K. Onarelly, ``Persepsi remaja indonesia terhadap kebijakan efisiensi energi
@@ -55,11 +79,6 @@ S.~Safikhani, S.~Keller, G.~Schweiger, and J.~Pirker, ``Immersive virtual
   architecture, engineering, and construction sector: systematic review,''
   \emph{International Journal of Digital Earth}, vol.~15, no.~1, pp. 503--526,
   2022.
-
-\bibitem{skripsikating}
-J.~E. A.~R. Suryanto, ``Pengembangan aplikasi virtual reality untuk visualisasi
-  dan kustomisasi desain bangunan rumah,'' Master's thesis, Universitas Gadjah
-  Mada, 2025.
 
 \bibitem{InteractiveDesignVR}
 H.~Lang and P.~Zhuang, ``Research on interactive design of building interior
@@ -124,5 +143,9 @@ M.~Schrepp, \emph{User Experience Questionnaire Handbook}, 2023, version 11, 12
   September 2023. [Online]. Available:
   \url{https://www.ueq-online.org/Material/Handbook.pdf}
 \BIBentrySTDinterwordspacing
+
+\bibitem{tavakol2011making}
+M.~Tavakol and R.~Dennick, ``Making sense of cronbach's alpha,''
+  \emph{International Journal of Medical Education}, vol.~2, pp. 53--55, 2011.
 
 \end{thebibliography}

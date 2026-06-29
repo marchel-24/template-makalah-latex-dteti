@@ -12,7 +12,7 @@
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
 
-\title{ModXplore: An Interactive VR-Based Simulation System for Household Electricity Consumption Estimation}
+\title{An Interactive VR-Based Simulation System for Household Electricity Consumption Estimation}
 
 \author{\IEEEauthorblockN{1\textsuperscript{st} Marchel Rianra Glendrikho Simanjuntak}
 \IEEEauthorblockA{\textit{Department of Electrical and} \\
@@ -36,7 +36,7 @@
 \maketitle
 
 \begin{abstract}
-Growing population and rising household appliance ownership in Indonesia have increased electricity demand, while public understanding of energy consumption patterns remains limited. Existing energy feedback is mostly static (e.g., monthly bills), and prior VR applications for residential design focus on visualization without energy simulation. This paper presents ModXplore, an interactive VR-based simulation system developed on Meta Quest 3 using Unity and the Agile Scrum method. The system enables users to explore and customize a virtual house, simulate household electricity consumption using a Bottom-Up Appliance Modeling approach, and automatically generate personalized appliance usage schedules via a Large Language Model (LLaMA 3.1 through the Groq API). Evaluation was conducted through black-box functional testing and a user study with 24 respondents using the System Usability Scale (SUS), User Experience Questionnaire (UEQ), and a Likert-scale questionnaire. All 29 functional test scenarios passed, the energy estimation module distinguished two usage scenarios with an 8.48\% monthly cost difference, the average SUS score was 71.56 (Grade C+), and the UEQ average was 2.15 with five of six scales rated Excellent. Users also reported strong support for energy understanding and decision-making (average above 4.5). ModXplore demonstrates that immersive VR combined with appliance-level energy estimation and AI-assisted scheduling effectively improves household energy literacy and supports decision-making for prospective homeowners.
+Growing population and rising household appliance ownership in Indonesia have increased electricity demand, while public understanding of energy consumption patterns remains limited. Existing energy feedback is mostly static (e.g., monthly bills), and prior VR applications for residential design focus on visualization without energy simulation. This paper presents ModXplore, an interactive VR-based simulation system developed on Meta Quest 3 using Unity and the Agile Scrum method. The system enables users to explore and customize a virtual house, simulate household electricity consumption using a Bottom-Up Appliance Modeling approach, and automatically generate personalized appliance usage schedules via a Large Language Model (LLaMA 3.1 through the Groq API). Evaluation was conducted through black-box functional testing and a user study with 24 respondents using the System Usability Scale (SUS), User Experience Questionnaire (UEQ), and a Likert-scale questionnaire. All 29 functional test scenarios passed, the energy estimation module distinguished two usage scenarios with an 8.48\% monthly cost difference, the average SUS score was 71.56 (Grade C+), and the UEQ average was 2.15 with five of six scales rated Excellent. Users also reported strong support for energy understanding and decision-making (average above 4.5). ModXplore demonstrates that immersive VR combined with appliance-level energy estimation and AI-assisted scheduling is capable of supporting household energy literacy and energy-related decision-making.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -45,11 +45,13 @@ Virtual Reality, household electricity simulation, ModXplore, Bottom-Up Applianc
 
 \section{Introduction}
 
-The continuous growth of Indonesia's population has driven a steady increase in household electricity demand. According to Statistics Indonesia (BPS), the national population growth rate has consistently ranged between 1\% and 1.5\% per year \cite{bpspertumbuhanpenduduk}, while data from the National Socioeconomic Survey (SUSENAS) confirm a corresponding rise in household electronic appliance ownership \cite{bpssusenas}. As households increasingly rely on devices such as air conditioners, televisions, and refrigerators, total residential electricity consumption continues to grow. Nevertheless, public understanding of efficient energy consumption patterns remains limited \cite{konsumsiEnergi2024}.
+The continuous growth of Indonesia's population has driven a steady increase in the demand for housing. According to Statistics Indonesia (BPS), the national population growth rate has consistently ranged between 1\% and 1.5\% per year \cite{bpspertumbuhanpenduduk}. This growing demand requires prospective buyers and homeowners to consider multiple aspects of house design before making a decision, such as room layout, building materials, and electronic appliance configuration. To support this process, Virtual Reality (VR) has been used as an interactive medium for simulating and observing house designs, allowing users to obtain a more realistic impression of a house before it is built or purchased \cite{skripsikating}.
+
+One important aspect to consider in house design simulation is the estimation of electricity consumption, since household appliance usage is a major contributor to a household's electricity demand \cite{hermadiana2025integrasi, salsabila2026pengaruh}. The growth of households has been accompanied by an increase in the number and variety of electronic appliances used, such as air conditioners, televisions, and refrigerators, as confirmed by the National Socioeconomic Survey (SUSENAS) \cite{bpssusenas}. This condition has caused household electricity demand to keep increasing alongside society's growing reliance on electronic appliances \cite{databoks2023internet}. Nevertheless, public understanding of efficient energy consumption patterns remains limited \cite{konsumsiEnergi2024}.
 
 A key barrier to energy-efficient behavior is the lack of accessible, actionable feedback on household energy use. Most users only receive aggregated information through monthly electricity bills, without understanding which appliances contribute most to their total consumption or how house design affects energy usage. Studies show that static, non-personalized energy feedback is insufficient to stimulate meaningful behavioral change \cite{agarwal_review_residential_energy}. Interactive and visual approaches have been shown to be more effective in raising energy literacy among building occupants \cite{henni2022evaluation}, and gamification or simulation-based methods have demonstrated potential in motivating energy behavior change \cite{li2024gamification}.
 
-Virtual Reality (VR) has emerged as a powerful medium for interactive visualization, particularly in the architecture, engineering, and construction sectors \cite{ImnersiveVR2022}. Prior work has demonstrated that VR enables users to explore and customize house designs in an immersive environment \cite{skripsikating}. However, existing VR applications for residential design have focused primarily on spatial visualization and aesthetic customization, without addressing electricity consumption simulation or energy estimation features. The integration of energy awareness into VR-based house design tools remains largely unexplored.
+Virtual Reality (VR) has emerged as a powerful medium for interactive visualization, particularly in the architecture, engineering, and construction sectors \cite{ImnersiveVR2022}. In particular, Suryanto \cite{skripsikating} developed a VR application for house design exploration and customization using Unity and Meta Quest 3. However, that system focused primarily on spatial visualization and aesthetic customization, without addressing electricity consumption simulation or energy estimation features. The integration of energy awareness into VR-based house design tools remains largely unexplored.
 
 This paper presents \textit{ModXplore}, an interactive VR-based simulation system developed for Meta Quest 3 using the Unity Engine. ModXplore allows users to explore and customize a virtual house while simultaneously simulating and estimating household electricity consumption using the Bottom-Up Appliance Modeling approach. The system further integrates a Large Language Model (LLM)---specifically LLaMA 3.1 via the Groq API---to automatically generate personalized appliance usage schedules. The system was evaluated through black-box functional testing and a user study with 24 respondents using the System Usability Scale (SUS), User Experience Questionnaire (UEQ), and a Likert-scale questionnaire on energy understanding and decision-making support.
 
@@ -59,7 +61,7 @@ The main contributions of this work are: (1) an interactive VR simulation system
 
 \subsection{VR for Building Visualization and Design}
 
-VR has been widely adopted in architecture and residential design to overcome the limitations of conventional 2D visualization. Lang and Zhuang demonstrated that combining VR with clustering algorithms for interior design improved modeling accuracy by over 20\% compared to traditional SVM-based methods and enabled real-time evaluation of design changes \cite{InteractiveDesignVR}. Safikhani et al. confirmed that immersive VR environments significantly enhance users' spatial understanding by allowing first-person exploration of buildings, which is difficult to achieve with static renders \cite{ImnersiveVR2022}. Wang et al. further showed that scene-context-aware object interaction in VR reduces selection time and raises user satisfaction during interior configuration tasks \cite{SceneContextVR}. The integration of VR with Building Information Modeling (BIM) has also been shown to improve simulation realism and design communication between users and architects \cite{eudl2023vr, mdpi2025vr}. In the Indonesian context, Suryanto developed a VR application for house design exploration and material customization on Meta Quest 3 using Unity, achieving a SUS score of 70.63; however, the system did not include any electricity consumption simulation or energy estimation feature \cite{skripsikating}.
+VR has been widely adopted in architecture and residential design to overcome the limitations of conventional 2D visualization. Lang and Zhuang demonstrated that combining VR with clustering algorithms for interior design improved modeling accuracy by over 20\% compared to traditional SVM-based methods and enabled real-time evaluation of design changes \cite{InteractiveDesignVR}. Safikhani et al. confirmed that immersive VR environments significantly enhance users' spatial understanding by allowing first-person exploration of buildings, which is difficult to achieve with static renders \cite{ImnersiveVR2022}. Wang et al. further showed that scene-context-aware object interaction in VR reduces selection time and raises user satisfaction during interior configuration tasks \cite{SceneContextVR}. The integration of VR with Building Information Modeling (BIM) has also been shown to improve simulation realism and design communication between users and architects \cite{eudl2023vr, mdpi2025vr}. In the Indonesian context, Suryanto \cite{skripsikating} developed a VR application for house design exploration and material customization on Meta Quest 3 using Unity; however, the system did not include any electricity consumption simulation or energy estimation feature.
 
 \subsection{VR and AR for Energy Simulation and Awareness}
 
@@ -70,7 +72,13 @@ Despite this progress, existing studies either focus on building-level energy mo
 
 \section{System Design}
 
-The overall application workflow begins when the user launches ModXplore and is presented with the main scene, where a house design is selected from the available models. The user is then transferred to the exploration scene, where two main paths are available: navigating between rooms within the selected house, or modifying the house appearance (materials, furniture, doors, windows, and lighting). After exploring and customizing the house, the user proceeds to the energy simulation stage, where appliance configurations are set—either manually or via the AI-based schedule personalization feature—and the resulting electricity consumption and cost estimates are displayed. This workflow ensures that house design exploration and energy simulation are presented as a single, continuous experience within the VR environment.
+The overall application workflow begins when the user launches ModXplore and is presented with the main scene, where a house design is selected from the available models. The user is then transferred to the exploration scene, where two main paths are available: navigating between rooms within the selected house, or modifying the house appearance (materials, furniture, doors, windows, and lighting). After exploring and customizing the house, the user proceeds to the energy simulation stage, where appliance configurations are set—either manually or via the AI-based schedule personalization feature—and the resulting electricity consumption and cost estimates are displayed. This workflow ensures that house design exploration and energy simulation are presented as a single, continuous experience within the VR environment. Fig.~\ref{fig:alur} illustrates this overall application flow.
+
+\begin{figure}[htbp]
+\centerline{\includegraphics[width=0.45\columnwidth]{alur-aplikasi.png}}
+\caption{Overall application workflow of ModXplore.}
+\label{fig:alur}
+\end{figure}
 
 \subsection{Development Methodology}
 
@@ -119,7 +127,7 @@ All parameters — power, quantity, start time, and duration — are configurabl
 To minimize the manual configuration burden required from users, ModXplore integrates LLaMA 3.1 8B Instant via the Groq API. Users describe their daily routine in natural language — either by text input or by voice transcribed locally via Faster-Whisper. A zero-shot prompt is constructed containing the activity description, the list of available virtual appliances, scheduling rules for weekdays and weekends, and a required JSON output schema. The LLM returns a structured schedule specifying each appliance's start time and usage duration for both day types. The Unity client parses the JSON and applies it to the simulation, instantly updating the energy and cost estimation display. Fig.~\ref{fig:ai} shows the AI-generated schedule result as presented to the user inside the VR application.
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=\columnwidth]{ai-schedule.png}}
+\centerline{\includegraphics[width=0.85\columnwidth]{ai-schedule.png}}
 \caption{AI-generated appliance schedule displayed in ModXplore.}
 \label{fig:ai}
 \end{figure}
@@ -150,7 +158,7 @@ Energy simulation and AI personalization (appliance configuration, energy/cost e
 
 \subsection{User Study}
 
-A user study was conducted with 24 respondents who tested the application as general users. Each participant completed a structured task scenario inside the VR environment, then filled out three evaluation instruments: the System Usability Scale (SUS), the User Experience Questionnaire (UEQ), and a Likert-scale questionnaire (1--5) assessing energy understanding and decision-making support.
+A user study was conducted with 24 respondents who tested the application as general users. Most respondents were aged 20--25 years (87.5\%), with smaller groups aged 26--30 years (8.3\%) and under 20 years (4.2\%); 66.7\% were male and 33.3\% female, and 79.2\% had prior experience using VR devices. Each participant completed a structured task scenario inside the VR environment, then filled out three evaluation instruments: the System Usability Scale (SUS), the User Experience Questionnaire (UEQ), and a Likert-scale questionnaire (1--5) assessing energy understanding and decision-making support.
 
 The SUS score is computed from ten alternating positive and negative statements, each rated on a 0--4 scale, and converted to a 0--100 scale \cite{brooke1996sus}:
 
@@ -170,7 +178,9 @@ where $r_j$ is the raw rating of item $j$ and $n$ is the number of items belongi
 
 \section{Results and Discussion}
 
-All 29 functional test scenarios passed as designed. For energy estimation accuracy, two appliance schedule configurations (Default and Energy-Saving) were compared. As shown in Table~\ref{tab:energy}, the Energy-Saving scenario yielded lower consumption on both weekdays and weekends, with a monthly cost difference of 8.48\%, confirming that the Bottom-Up model correctly distinguishes usage patterns.
+\subsection{Functional Testing and Energy Estimation Results}
+
+All 29 functional test scenarios passed as designed, confirming that the implemented features operate correctly within a single integrated VR environment. For energy estimation accuracy, two appliance schedule configurations (Default and Energy-Saving) were compared. As shown in Table~\ref{tab:energy}, the Energy-Saving scenario yielded lower consumption on both weekdays and weekends, with a monthly cost difference of 8.48\%, confirming that the Bottom-Up model correctly distinguishes usage patterns.
 
 \begin{table}[htbp]
 \caption{Energy Estimation Comparison: Default vs. Energy-Saving Scenario}
@@ -220,7 +230,9 @@ Bathroom Light & 07:00, 1h & 07:00, 1h & 07:00, 1h & 07:00, 1h \\
 \end{center}
 \end{table}
 
-A six-item Likert-scale questionnaire (Q1--Q6) was used to measure users' understanding of the energy simulation feature, their perception of the AI scheduling feature, and the system's support for decision-making. Results are shown in Table~\ref{tab:likert-energy}. All six items scored above 4.4 (Strongly Agree), with the hourly energy graph (Q3 = 4.71) and the AI scheduling feature (Q5 = 4.75) receiving the highest ratings, indicating that the visual representation of hourly consumption patterns and the AI-based schedule recommendation were especially effective. Fig.~\ref{fig:grafik} shows the hourly energy consumption graph as displayed in the VR environment.
+\subsection{Usability and User Experience Results}
+
+A six-item Likert-scale questionnaire (Q1--Q6) was used to measure users' understanding of the energy simulation feature, their perception of the AI scheduling feature, and the system's support for decision-making. Results are shown in Table~\ref{tab:likert-energy}. All six items scored above 4.4 (Strongly Agree), with the hourly energy graph (Q3 = 4.71) and the AI scheduling feature (Q5 = 4.75) receiving the highest ratings, indicating that the visual representation of hourly consumption patterns and the AI-based schedule recommendation were particularly well-received by users. Fig.~\ref{fig:grafik} shows the hourly energy consumption graph as displayed in the VR environment.
 
 \begin{table}[htbp]
 \caption{User Evaluation Questionnaire Results (Q1--Q6)}
@@ -247,12 +259,14 @@ Q6 & Supports better decisions on electricity usage & 4.54 \\
 \end{table}
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=\columnwidth]{grafik-energi.png}}
+\centerline{\includegraphics[width=0.85\columnwidth]{grafik-energi.png}}
 \caption{Hourly electricity consumption graph in ModXplore.}
 \label{fig:grafik}
 \end{figure}
 
-The SUS evaluation yielded an average score of 71.56 (Grade C+, 60th--64th percentile on the Sauro--Lewis Curved Grading Scale), indicating an acceptable usability level. Individual scores ranged from 57.5 to 87.5, showing some variability in how easily respondents adapted to the VR interface. The UEQ results per scale are shown in Table~\ref{tab:ueq}. Five of six scales reached the \textit{Excellent} benchmark; only \textit{Perspicuity} was rated \textit{Good} (1.91), reflecting that VR interaction was relatively unfamiliar for some respondents. This is consistent with the SUS variability noted above, suggesting that initial VR learnability, rather than the energy simulation or AI scheduling features themselves, was the primary factor behind lower individual scores.
+The SUS evaluation yielded an average score of 71.56 (Grade C+, 60th--64th percentile on the Sauro--Lewis Curved Grading Scale), indicating an acceptable usability level. Individual scores ranged from 57.5 to 87.5, showing some variability in how easily respondents adapted to the VR interface. A Cronbach's Alpha reliability test yielded a value of 0.54, below the commonly accepted threshold of 0.70 \cite{tavakol2011making}. Analysis revealed that items Q4 (``need help from others'') and Q10 (``need to get used to the system'') had very low item-total correlations (0.036 and $-0.005$, respectively). Distribution analysis showed that 70.8\% of respondents agreed they needed to get accustomed to the system (Q10) while simultaneously rating the application as easy to use (Q3), suggesting that respondents interpreted ``getting used to'' as referring to the VR platform in general rather than the ModXplore application itself --- consistent with the fact that 20.8\% of respondents had no prior VR experience. This is noted as a limitation of the study.
+
+The UEQ results per scale are shown in Table~\ref{tab:ueq}. Five of six scales reached the \textit{Excellent} benchmark; only \textit{Perspicuity} was rated \textit{Good} (1.91), reflecting that VR interaction was relatively unfamiliar for some respondents. This is consistent with the SUS reliability findings noted above, suggesting that initial VR learnability, rather than the energy simulation or AI scheduling features themselves, was the primary factor behind lower individual scores and reduced internal consistency.
 
 \begin{table}[htbp]
 \caption{UEQ Evaluation Results per Scale}
@@ -275,12 +289,14 @@ Novelty         & 2.30 & \textit{Excellent} \\
 \end{center}
 \end{table}
 
-All six items in Table~\ref{tab:likert-energy} achieved a mean score above 4.4, falling into the Strongly Agree category. These results confirm that users found the system effective in supporting energy understanding, AI-based schedule configuration, and energy-efficient decision-making.
+All six items in Table~\ref{tab:likert-energy} achieved a mean score above 4.4, falling into the Strongly Agree category. These results indicate that users perceived the system as helpful in supporting energy understanding, AI-based schedule configuration, and energy-efficient decision-making.
 
-Table~\ref{tab:comparison} compares ModXplore against the most closely related prior work \cite{skripsikating}, which also used Unity and Meta Quest 3 for VR house design. ModXplore extends that foundation with three new capabilities — appliance-level energy simulation, daily/monthly kWh estimation, and AI-based schedule personalization — while maintaining a higher SUS grade (C+ vs. C). This confirms that the added functional complexity did not degrade usability.
+\subsection{Functional Comparison with Prior Work}
+
+ModXplore was developed as a continuation of the work by Suryanto \cite{skripsikating}, which also used Unity and Meta Quest 3 for VR house design exploration. Table~\ref{tab:comparison} compares the features available in both systems. ModXplore extends the prior foundation with three new capabilities --- appliance-level energy simulation, daily/monthly kWh estimation, and AI-based schedule personalization --- that were not available in the previous system.
 
 \begin{table}[htbp]
-\caption{Feature and Usability Comparison with Prior Work}
+\caption{Feature Comparison with Prior Work}
 \label{tab:comparison}
 \begin{center}
 \begin{tabular}{|p{3.5cm}|c|c|}
@@ -299,55 +315,23 @@ Daily/monthly kWh estimation  & $\times$ & \checkmark \\
 \hline
 AI schedule personalization   & $\times$ & \checkmark \\
 \hline
-Respondents                 & 28    & 24 \\
-\hline
-SUS score                   & 70.63 & 71.56 \\
-\hline
-SUS grade                   & C     & C+ \\
-\hline
 \end{tabular}
 \end{center}
 \end{table}
 
-A per-scale UEQ comparison with \cite{skripsikating} is shown in Table~\ref{tab:ueq-comparison}. Four of six scales improved, with \textit{Efficiency} rising from \textit{Good} (1.82) to \textit{Excellent} (2.16) and \textit{Perspicuity} rising from \textit{Above Average} (1.61) to \textit{Good} (1.91), indicating that the interface remained efficient and became easier to learn despite the added functionality. The largest gain was in \textit{Novelty} (1.96 to 2.30), suggesting that the energy simulation and AI scheduling features were perceived as a strong novel contribution. \textit{Attractiveness} showed a small decrease (2.34 to 2.25), though both remain in the \textit{Excellent} category; this difference may be attributable to differing respondent characteristics between the two studies rather than a functional regression.
-
-\begin{table}[htbp]
-\caption{UEQ Per-Scale Comparison with Prior Work}
-\label{tab:ueq-comparison}
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Scale} & \textbf{Suryanto \cite{skripsikating}} & \textbf{ModXplore} \\
-\hline
-Attractiveness  & 2.34 (Excellent)     & 2.25 (Excellent) \\
-\hline
-Perspicuity     & 1.61 (Above Average) & 1.91 (Good) \\
-\hline
-Efficiency      & 1.82 (Good)          & 2.16 (Excellent) \\
-\hline
-Dependability   & 2.00 (Excellent)     & 2.05 (Excellent) \\
-\hline
-Stimulation     & 2.11 (Excellent)     & 2.25 (Excellent) \\
-\hline
-Novelty         & 1.96 (Excellent)     & 2.30 (Excellent) \\
-\hline
-\end{tabular}
-\end{center}
-\end{table}
-
-These findings suggest that immersive VR combined with appliance-level energy feedback and AI-assisted scheduling is an effective approach for improving household energy literacy. The UEQ benchmark comparison is further illustrated in Fig.~\ref{fig:ueq}.
+The UEQ benchmark results for ModXplore are further illustrated in Fig.~\ref{fig:ueq}, showing that five of six scales achieved the \textit{Excellent} category, with \textit{Perspicuity} rated \textit{Good} (1.91).
 
 \begin{figure}[htbp]
-\centerline{\includegraphics[width=\columnwidth]{ueq-benchmark.png}}
-\caption{UEQ benchmark comparison results for ModXplore.}
+\centerline{\includegraphics[width=0.85\columnwidth]{ueq-benchmark.png}}
+\caption{UEQ benchmark results for ModXplore.}
 \label{fig:ueq}
 \end{figure}
 
-A few threats to validity should also be noted. First, the user study involved 24 respondents who acted as general users rather than confirmed prospective homeowners, which may not fully capture the priorities of users actively planning a home purchase or construction. Second, the energy estimation comparison (Table~\ref{tab:energy}) was evaluated on a single house design (Type 36 Model 2) with a fixed appliance configuration; results may vary for other house types or appliance sets. Third, the Bottom-Up Appliance Modeling approach assumes constant rated power and does not account for real-time load variation, appliance efficiency degradation, or standby consumption. Finally, the AI-based schedule personalization relies on an external LLM API (Groq), whose output quality and response time may vary depending on network conditions and prompt phrasing, which were not systematically varied in this study.
+A few threats to validity should also be noted. First, the energy estimation comparison (Table~\ref{tab:energy}) was evaluated on a single house design (Type 36 Model 2) with a fixed appliance configuration; results may vary for other house types or appliance sets. Second, the Bottom-Up Appliance Modeling approach assumes constant rated power and does not account for real-time load variation, appliance efficiency degradation, or standby consumption. Finally, the AI-based schedule personalization relies on an external LLM API (Groq), whose output quality and response time may vary depending on network conditions and prompt phrasing, which were not systematically varied in this study.
 
 \section{Conclusion}
 
-This paper presented ModXplore, an interactive VR-based simulation system that integrates immersive house exploration, Bottom-Up Appliance Modeling for household electricity estimation, and LLM-based schedule personalization on Meta Quest 3. The system was evaluated through functional testing and a user study with 24 respondents. Results showed that all features performed correctly, the energy estimation module accurately differentiated usage scenarios (8.48\% monthly cost difference), usability was acceptable (SUS = 71.56), and user experience was rated Excellent on five of six UEQ scales. Users also reported strong support for energy understanding and decision-making. Future work should address the limitations discussed above by validating the system with prospective homeowners, testing across multiple house designs, and applying the system to larger respondent groups for broader generalizability.
+This paper presented ModXplore, an interactive VR-based simulation system that integrates immersive house exploration, Bottom-Up Appliance Modeling for household electricity estimation, and LLM-based schedule personalization on Meta Quest 3. The system was evaluated through functional testing and a user study with 24 respondents. Results showed that all features performed correctly, the energy estimation module accurately differentiated usage scenarios (8.48\% monthly cost difference), usability was acceptable (SUS = 71.56, Grade C+), and user experience was rated Excellent on five of six UEQ scales. Users also reported that the system supports energy understanding and decision-making (all Likert items above 4.4). A Cronbach's Alpha of 0.54 for the SUS instrument was observed, attributed to respondents' unfamiliarity with the VR platform rather than the application itself. Future work should address the limitations discussed above by evaluating the system with a larger and more diverse respondent group, validating the energy estimation against actual electricity consumption data, and testing across multiple house designs to improve generalizability.
 
 \section*{Acknowledgment}
 
@@ -374,8 +358,8 @@ The authors would like to thank all 24 respondents who participated in the user 
 
 
 
-\bibliography{references}{}
 \bibliographystyle{IEEEtran}
+\bibliography{references}{}
 
 %\begin{thebibliography}{00}
 %\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
